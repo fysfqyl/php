@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="login.php" method="post">
+        用户名：<input type="text" name="username"/>
+        密码：<input type="password" name="password"/>
+        验证码：<input type="text" name="code" /><img id="code" src="./code.php" alt=""><a href="#" id="change">看不清 换一张</a>
+        <input type="submit" value="登录"/>
+    </form>
+</body>
+</html>
+<script>
+    var img = document.getElementById("code");
+    var change = document.getElementById("change");
+    change.onclick = function() {
+        img.src = "./code.php?rand="+Math.random();
+        return false;
+    }
+</script>

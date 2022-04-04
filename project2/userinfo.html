@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+        html,body{
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden; 
+}
+.left{
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  /* background: red; */
+}
+.right{
+  height: 100%;
+  margin-left: 300px;
+  /* background: orange; */
+}
+textarea{
+    width: 300px;
+    height: 100px;
+}
+    </style>
+</head>
+<body>
+    <h1>用户中心</h1>
+    
+    <div class="left">
+        <ul>
+            <li><a href="#home">个人资料</a></li>
+            <li><a href="#news">个人信息</a></li>
+            <li><a href="#contact">修改信息</a></li>
+            <li><a href="#about">上传头像</a></li>
+            <li><a href="#about">我的相册</a></li>
+            <li><a href="#about"><b>系统功能</b></a></li>
+            <li><a href="#about">退出登录</a></li>
+            
+        </ul>
+    </div>
+    <div class="right">
+        <p>个人信息</p>
+        <form action="" method="post" style="">
+            <table>
+                <tr><td>姓名：<input name="name" type="text"></td></tr>
+                 <tr><td>性别：<input type="radio" name="gender" value="男">男
+                    <input type="radio" name="gender" value="女">女
+                </td></tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>血型：<select name="blood">
+                    <?php foreach($blood as $v): ?>
+                        <option value="<?php echo $v; ?>"><?php echo $v; ?></option>
+                    <?php endforeach;?>
+                </select></td>
+            </tr>
+            <tr>
+                <td>爱好：<?php foreach($hobby as $v): ?>
+                    <input type="checkbox" name="hobby[]" value="<?php echo $v; ?>"/>
+                    <?php echo $v; ?>
+                    <?php endforeach;?></td>
+            </tr>
+            <tr>
+                <td>个人简介：<textarea name="description"></textarea></td>
+            </tr>
+            </table>
+            <input type="reset" value="重置"/>
+            <input type="submit" value="保存"/>
+        </form>
+    </div>
+    
+</body>
+</html>
